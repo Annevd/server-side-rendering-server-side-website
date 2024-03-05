@@ -1,0 +1,9 @@
+<%- include('./partials/head') %>
+
+<ul>
+    <% stories.forEach(story => { %>
+      <li><%= story.title %></li>
+    <% }) %>
+  </ul>
+
+<%- include('./partials/foot') %>
