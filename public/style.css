@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* ------ colors ------ */
+    /* menu knoppen */
+    --menu-1: #3F92B6;
+    --menu-2: #599AE7;
+    --menu-3: #954BE2;
+    --menu-4: #06A192;
+    --menu-5: #FD8C73;
+
+    /* Methods */
+    --method-1: #1CB854;
+    --method-2: #37C6AB;
+    --method-3: #059CC0;
+    --method-4: #FF8C59;
+    --method-5: #FFA02E;
+
+    /* Menu layover */
+    --menu-layover: #292929;
+
+    /* Backgrounds */
+    --menu-background: linear-gradient(0deg, rgba(28,88,114,1) 0%, rgba(63,147,183,1) 100%);
+    --story-nightmode-background: linear-gradient(0deg, rgba(71,24,113,1) 0%, rgba(4,4,4,1) 100%);
+    
+}
+
+nav {
+    height: 100dvh;
+    background: var(--menu-layover);
+    opacity: 95%;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style: none;
+}
+
+.menu-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+}
+
+li:first-of-type {
+    background: var(--menu-1)
+}
+
+li:nth-of-type(2) {
+    background: var(--menu-2);
+}
+
+li:nth-of-type(3) {
+    background: var(--menu-3);
+}
+
+li:nth-of-type(4) {
+    background: var(--menu-4);
+}
+
+li:nth-of-type(5) {
+    background: var(--menu-5);
+}
