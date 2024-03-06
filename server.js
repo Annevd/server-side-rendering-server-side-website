@@ -34,10 +34,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // Haal alle squads uit de WHOIS API op
 const storyData = await fetchJson(apiUrl + '/tm_story')
-// const languageData = await fetchJson(apiUrl + '/tm_language')
-// const speakerData = await fetchJson(apiUrl + '/tm_speaker_profile')
-// const audioData = await fetchJson(apiUrl + '/tm_audio')
-// const playlistData = await fetchJson(apiUrl + '/tm_playlist')
+const languageData = await fetchJson(apiUrl + '/tm_language')
+const speakerData = await fetchJson(apiUrl + '/tm_speaker_profile')
+const audioData = await fetchJson(apiUrl + '/tm_audio')
+const playlistData = await fetchJson(apiUrl + '/tm_playlist')
 
 
 // Maak een GET route voor de index
@@ -45,7 +45,12 @@ const storyData = await fetchJson(apiUrl + '/tm_story')
 app.get('/', function (request, response) {
   // Stap 2
   // Haal alle personen uit de WHOIS API op
-  fetchJson(apiUrl + '/tm_story').then((apiData) => {
+  Promise.all([
+    fetchJson(apiUrl + '/tm_story'),
+    fetchJson(apiUrl + '/tm_language'),
+    fetchJson(apiUrl + '/tm_playlist'),
+    fetchJson(apiUrl + '/tm_audio')
+  ]).then(([storyData, languageData, playlistData, audioData]) => {
     // apiData bevat gegevens van alle personen uit alle squads
     // Je zou dat hier kunnen filteren, sorteren, of zelfs aanpassen, voordat je het doorgeeft aan de view
     // Stap 3
@@ -55,7 +60,10 @@ app.get('/', function (request, response) {
     // HTML maken op basis van JSON data
     response.render('index', {
       // persons: persons.data,
-      stories: storyData.data})
+      stories: storyData.data,
+      languages: languageData.data,
+      playlists: playlistData.data,
+      audio: audioData.data})
   })
 })
 

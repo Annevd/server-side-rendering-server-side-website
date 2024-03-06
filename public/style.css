@@ -33,19 +33,33 @@
     --lessons-background: linear-gradient(0deg, rgba(20,33,81,1) 0%, rgba(71,24,113,1) 100%);
 }
 
+main {
+    background: var(--lessons-background);
+}
+
+h1, h2 {
+    color: white;
+}
+
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100dvh;
+    height: 100%;
     background: var(--menu-layover);
-    margin-top: -60rem;
+    position: fixed;
+    top: -100%;
+    width: 100%;
     transition: 0.25s ease-in-out;
 }
 
 .menu-open {
-    margin-top: 0rem;
+    top: 0rem;
 }
+
+/* .no-scroll {
+    overflow: hidden;
+} */
 
 .menu {
     display: grid;
@@ -53,7 +67,7 @@ nav {
     gap: 3rem;
 }
 
-li {
+.menu li {
     list-style: none;
 }
 
@@ -72,6 +86,7 @@ li {
 
 .menu-button.menu {
     background: white;
+    display: none;
 }
 
 .menu-button.home {
