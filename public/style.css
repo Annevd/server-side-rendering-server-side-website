@@ -5,9 +5,16 @@
     padding: 0;
 }
 
+/* --- Custom properties --- */
+
 :root {
     /* ------ Fonts ------ */
     --primary-font:  "Poppins", sans-serif;
+
+    /* ------ Borders ------ */
+    --radius-1: 16px;
+    --radius-2: 8px;
+    --radius-3: 4px;
 
     /* ------ colors ------ */
     /* menu knoppen */
@@ -33,14 +40,7 @@
     --lessons-background: linear-gradient(0deg, rgba(20,33,81,1) 0%, rgba(71,24,113,1) 100%);
 }
 
-main {
-    background: var(--lessons-background);
-    font-family: var(--primary-font);
-}
-
-h1, h2 {
-    color: white;
-}
+/* --- Navigatie menu --- */
 
 nav {
     display: flex;
@@ -52,24 +52,36 @@ nav {
     top: -100%;
     width: 100%;
     transition: 0.25s ease-in-out;
+
+    ul {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 3rem;
+
+        li {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            > a {
+                display: inline-block;
+                padding: 1.5rem;
+                border-radius: var(--radius-1);
+                margin-bottom: 0.25rem;
+            }
+
+            > p {
+                font: 400 1rem var(--primary-font);
+                color: white;
+            }
+        }
+    }
 }
 
 .menu-open {
     top: 0rem;
-}
-
-/* .no-scroll {
-    overflow: hidden;
-} */
-
-.menu {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 3rem;
-}
-
-.menu li {
-    list-style: none;
 }
 
 .menu-button {
@@ -81,7 +93,7 @@ nav {
     appearance: none;
     border: none;
     padding: 0.75rem;
-    border-radius: 1rem;
+    border-radius: var(--radius-1);
     cursor: pointer;
 }
 
@@ -96,20 +108,6 @@ nav {
 
 .hidden {
     display: none;
-}
-
-.menu li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.menu a {
-    display: inline-block;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    margin-bottom: 0.25rem;
 }
 
 .menu li:first-child a {
@@ -132,9 +130,122 @@ nav {
     background: var(--menu-5);
 }
 
-.menu p {
-    font: 400 1rem var(--primary-font);
+
+/* --- Algemene styling --- */
+
+h1, h2 {
     color: white;
+    font-weight: 600;
+}
+
+h1 {
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 28px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 2rem;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    background: none;
+    font-family: var(--primary-font);
+}
+
+main.lessons {
+    background: var(--lessons-background);
+    font-family: var(--primary-font);
+
+    .playlist {
+        width: 136px;
+        height: 189px;
+    
+        a {
+            display: inline-block;
+            background: white;
+            border-radius: var(--radius-2);
+    
+            figure {
+                margin: 0.25rem;
+    
+                img {
+                    width: 100%;
+                    height: 95px;
+                    object-fit: cover;
+                    border-radius: var(--radius-2);
+                }
+    
+                figcaption {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+            }
+        }
+        .audio-container {
+            display: flex;
+        }
+    }
+
+    section.activity {
+        margin-bottom: 2rem;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            gap: 1.5rem;
+    
+            li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.25rem 1rem;
+                border-radius: var(--radius-2);
+                background:#139943;
+                color: white;
+            }
+        }
+    }
+
+    section.own-playlists {
+        margin-bottom: 2rem;
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .add-playlist-button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            background: #494375;
+            border-radius: var(--radius-2);
+
+            button {
+                height: auto;
+
+                span {
+                    color: white;
+                }
+            }
+        }
+    }
 }
 
 /* Hovers & active states */
