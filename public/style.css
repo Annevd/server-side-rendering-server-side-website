@@ -3,16 +3,12 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-*, *::before, *::after {
     box-sizing: border-box;
 }
 
 /* --- Custom properties --- */
 
 :root {
-
     --spacing: 0.5rem;
 
     /* ------ Fonts ------ */
@@ -60,26 +56,26 @@ nav {
     width: 100%;
     transition: 0.25s ease-in-out;
 
-    ul {
+    & ul {
         display: grid;
         grid-template-columns: auto auto;
         gap: 3rem;
 
-        li {
+        & li {
             list-style: none;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
 
-            > a {
+            & > a {
                 display: inline-block;
                 padding: 1.5rem;
                 border-radius: var(--radius-1);
                 margin-bottom: 0.25rem;
             }
 
-            > p {
+            & > p {
                 font: 400 1rem var(--primary-font);
                 color: white;
             }
@@ -113,7 +109,7 @@ nav {
     background: var(--menu-layover);
 }
 
-.hidden {
+.hidden-menu {
     display: none;
 }
 
@@ -180,7 +176,7 @@ button  {
     cursor: pointer; 
     font: inherit; 
     padding: 0; 
-    outline: inherit;
+    /* outline: inherit; */
 }
 
 li {
@@ -191,7 +187,11 @@ section {
     margin: 0 0.75rem 0 0.75rem;
 }
 
-/* --- Lessons pagina --- */
+/*██      ███████ ███████ ███████  ██████  ███    ██ ███████ 
+  ██      ██      ██      ██      ██    ██ ████   ██ ██      
+  ██      █████   ███████ ███████ ██    ██ ██ ██  ██ ███████ 
+  ██      ██           ██      ██ ██    ██ ██  ██ ██      ██ 
+  ███████ ███████ ███████ ███████  ██████  ██   ████ ███████ */
 
 .lessons {
     background: var(--lessons-background);
@@ -203,22 +203,33 @@ section {
         margin-bottom: 2rem;
     }
 
-    .activity ul {
+    .activity ol::-webkit-scrollbar {
+        display: none;
+    }
+
+    .activity ol {
         display: flex;
         justify-content: center;
         flex-wrap: nowrap;
-        overflow: hidden;
+        overflow: scroll;
+        counter-reset: list-counter;
         gap: 1.5rem;
     }
         
     .activity li {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
-        padding: 0.25rem 1rem;
+        padding: 0.5rem 1rem;
+        width: 18rem;
         border-radius: var(--radius-2);
         background:#139943;
         color: white;
+    }
+
+    .activity ol li::before {
+        content: counter(list-counter) "."; /* insert the counter value as content  + add "." after the number */
+        counter-increment: list-counter; /* increment the counter value */
     }
 
     /* Own playlists */
@@ -462,6 +473,16 @@ section {
         padding-bottom: 2rem;
         margin-right: 0;
     }
+
+    .hidden-items {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
 }
 
 
