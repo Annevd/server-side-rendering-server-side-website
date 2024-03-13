@@ -570,15 +570,15 @@ section {
             border-radius: 0 var(--radius-2) var(--radius-2) 0;
           }
 
-          input:not(:placeholder-shown) {
+          input:not(:placeholder-shown) { /* Styles for the input when it's not showing a placeholder */
             border-radius: var(--radius-2) 0 0 var(--radius-2);
-            width: calc(100% - 4rem);
+            width: calc(100% - 4rem); /* Calculate width to accommodate the button */
             + button {
-              display: block;
+              display: block; /* Display the button when input is not showing a placeholder */
             }
           }
 
-          label {
+          label { /* Styles for the label element (hidden) */
             position: absolute;
             clip: rect(1px, 1px, 1px, 1px);
             padding: 0;
