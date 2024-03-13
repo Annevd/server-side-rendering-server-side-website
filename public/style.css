@@ -529,7 +529,7 @@ section {
         text-align: center;
     }
 
-    /* Zoekbalk en filters */
+    /* Zoekbalk */
 
     .search {
         position: relative;
@@ -588,6 +588,8 @@ section {
             overflow: hidden;
           }
     }
+
+    /* Filters */
 
     .filters {
         display: flex;
