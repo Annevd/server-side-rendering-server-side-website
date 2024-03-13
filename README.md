@@ -20,9 +20,9 @@ Voor deze opdracht heb ik de eerste "lessons" pagina mobile first gebouwd inclus
 
 ### Visual
 
-<img width= 300 src="https://github.com/Annevd/server-side-rendering-server-side-website/assets/144004647/38d544c3-fd83-47ed-a4ed-5f916e9bd900">
-<img width= 300 src="https://github.com/Annevd/server-side-rendering-server-side-website/assets/144004647/2aac703b-4943-40bb-86ad-14409b6fa0f1">
-<img width= 300 src="https://github.com/Annevd/server-side-rendering-server-side-website/assets/144004647/f9f18747-e248-4e92-b0bc-daa5ff1e8ab5">
+<img width= 250 src="https://github.com/Annevd/server-side-rendering-server-side-website/assets/144004647/38d544c3-fd83-47ed-a4ed-5f916e9bd900">
+<img width= 250 src="https://github.com/Annevd/server-side-rendering-server-side-website/assets/144004647/2aac703b-4943-40bb-86ad-14409b6fa0f1">
+<img width= 250 src="https://github.com/Annevd/server-side-rendering-server-side-website/assets/144004647/f9f18747-e248-4e92-b0bc-daa5ff1e8ab5">
 
 ### Live link
 <!-- Voeg een link toe naar Github Pages 🌐-->
