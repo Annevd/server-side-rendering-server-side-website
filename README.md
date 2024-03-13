@@ -26,6 +26,7 @@ Voor deze opdracht heb ik de eerste "lessons" pagina mobile first gebouwd inclus
 
 ### Live link
 <!-- Voeg een link toe naar Github Pages 🌐-->
+https://server-side-rendering-server-side-website-o1jn.onrender.com
 
 ## Gebruik
 <!--Bij Gebruik staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
